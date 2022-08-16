@@ -1,14 +1,15 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { Camera } from "./camera";
 import { Root, Preview, Footer, GlobalStyle } from "./styles";
+import { Button } from '@mui/material';
 
 const App = () => {
   const [isCameraOpen, setIsCameraOpen] = useState(false);
   const [cardImage, setCardImage] = useState();
 
   return (
-    <Fragment>
+    <div>
       <Root>
         {isCameraOpen && (
           <Camera
@@ -25,27 +26,27 @@ const App = () => {
         )}
 
         <Footer>
-          <button 
+          <Button 
             onClick={() => 
               setIsCameraOpen(true)
             }
           >
               Open Camera
-          </button>
+          </Button>
 
-          <button
+          <Button
             onClick={() => {
               setIsCameraOpen(false);
               setCardImage(undefined);
             }}
           >
             Close Camera
-          </button>
+          </Button>
         </Footer>
         
       </Root>
       <GlobalStyle />
-    </Fragment>
+      </div>
   );
 }
 
