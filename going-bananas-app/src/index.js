@@ -1,16 +1,18 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import ReactDOM from "react-dom";
 import { Camera } from "./camera";
 import { Root, Preview, Footer, GlobalStyle } from "./styles";
-import { Button } from '@mui/material';
+import Header from './header/header.component';
 
 const App = () => {
   const [isCameraOpen, setIsCameraOpen] = useState(false);
   const [cardImage, setCardImage] = useState();
 
   return (
-    <div>
+    <Fragment>
       <Root>
+        <Header />
+
         {isCameraOpen && (
           <Camera
             onCapture={blob => setCardImage(blob)}
@@ -26,27 +28,27 @@ const App = () => {
         )}
 
         <Footer>
-          <Button 
+          <button 
             onClick={() => 
               setIsCameraOpen(true)
             }
           >
               Open Camera
-          </Button>
+          </button>
 
-          <Button
+          <button
             onClick={() => {
               setIsCameraOpen(false);
               setCardImage(undefined);
             }}
           >
             Close Camera
-          </Button>
+          </button>
         </Footer>
         
       </Root>
       <GlobalStyle />
-      </div>
+    </Fragment>
   );
 }
 
