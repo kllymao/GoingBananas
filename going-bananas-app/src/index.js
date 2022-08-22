@@ -30,6 +30,7 @@ const App = () => {
             onClick={() => 
               setIsCameraOpen(true)
             }
+            variant = "outlined"
           >
               Open Camera
           </Button>
@@ -39,6 +40,7 @@ const App = () => {
               setIsCameraOpen(false);
               setCardImage(undefined);
             }}
+            variant = "outlined"
           >
             Close Camera
           </Button>
