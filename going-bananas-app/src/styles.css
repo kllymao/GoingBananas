@@ -1,0 +1,41 @@
+.App {
+    font-family: sans-serif;
+    text-align: center;
+}
+  
+.MainContent {
+    display: flex;
+    flex-direction: row;
+}
+  
+.boxOne {
+    width: 50%;
+}
+  
+.boxTwo {
+    width: 50%;
+    display: block;
+}
+  
+.banaRecTitle {
+    display: flex;
+    flex-direction: row;
+}
+  
+.allTitle {
+    text-align: left;
+}
+  
+.banana {
+    color: #fee440;
+}
+  
+.uploadPicButton {
+    margin: 0;
+    position: relative;
+    top: 60%;
+    left: 45%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+  
