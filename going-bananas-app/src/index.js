@@ -2,7 +2,7 @@ import React, { Fragment, useState } from "react";
 import ReactDOM from "react-dom";
 import { Camera } from "./camera";
 import { Root, Preview, Footer, GlobalStyle } from "./styles";
-import Header from './header/header.component';
+import Header from "./header/header.component";
 
 const App = () => {
   const [isCameraOpen, setIsCameraOpen] = useState(false);
