@@ -18,13 +18,16 @@ function Center({ children }) {
     );
 }
 
-const MainContent = () => {
+const WelcomePage = (props) => {
+
+    const {setIsCameraOpen} = props;
+
     return (
         <div className="MainContent">
             <Box
                 className="boxOne"
                 sx={{
-                height: 1000,
+                height: 650,
                 backgroundColor: "white",
                 border: 0
                 }}
@@ -32,6 +35,9 @@ const MainContent = () => {
                 <Button
                     className="uploadPicButton"
                     sx={{ border: 1, height: 600, width: 500 }}
+                    onClick = {() => {
+                        setIsCameraOpen(true);
+                    }}
                 >
                     <AddIcon />
                 </Button>
@@ -39,7 +45,7 @@ const MainContent = () => {
             <Box
                 className="boxTwo"
                 sx={{
-                height: 1000,
+                height: 650,
                 border: 0
                 }}
             >
@@ -52,19 +58,27 @@ const MainContent = () => {
                             sx={{ m: 1 }}
                         >
                             <div>Let's recognize some&nbsp;</div>
-                            <div className="banana">banana</div>
+                            <div className="banana">bananas</div>
                             <div>! </div>
                         </Typography>
                         
                         <Typography variant="p" color="gray" sx={{ m: 1 }}>
-                            Click the yellow box on your left to take your first banana picture!
+                            Take a picture of your banana!
                         </Typography>
 
                         <Box sx={{ height: 100 }} />
 
-                        <div sx={{ m: 2 }}>
-                            <StyledButton />
-                        </div>
+                        {/* <div sx={{ m: 2 }}>
+                            <Button
+                                variant="contained"
+                                onClick={() => {
+                                    setIsCameraOpen(true);
+                                }}
+                                size="large"
+                            >
+                                Take a picture of your banana!
+                            </Button>
+                        </div> */}
                     </div>
                 </Center>
             </Box>
@@ -72,17 +86,4 @@ const MainContent = () => {
     );
 };
 
-const StyledButton = () => {
-    return (
-        <Button
-            variant="contained"
-            onClick={() => {
-                //this alert fucntion should be changed into leading toward the next big frame
-                alert("clicked");
-            }}
-            size="large"
-        >
-            upload your banana from here!
-        </Button>
-    )
-}
+export default WelcomePage;

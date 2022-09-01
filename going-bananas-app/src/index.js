@@ -4,6 +4,7 @@ import { Camera } from "./camera";
 import { Preview, Footer } from "./styles";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import TopMenu from './top-menu/top-menu.component';
+import WelcomePage from "./main-content/welcome-page.component";
 
 import "./styles.css";
 
@@ -96,6 +97,10 @@ const App = () => {
             <ThemeProvider theme = {theme}>
                 <TopMenu />
 
+                {!isCameraOpen ? <WelcomePage 
+                  setIsCameraOpen = {setIsCameraOpen}
+                /> : undefined}
+
                 {isCameraOpen ? (
                 <Camera
                     onCapture={blob => setCardImage(blob)}
@@ -111,13 +116,13 @@ const App = () => {
                 )}
 
                 <Footer>
-                <button 
+                {/* <button 
                     onClick={() => 
                     setIsCameraOpen(true)
                     }
                 >
                     Open Camera
-                </button>
+                </button> */}
 
                 <button
                     onClick={() => {
